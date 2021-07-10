@@ -1,0 +1,21 @@
+<div class="container-fluid text-center">
+  {{ title }}
+  <!-- <ng-container *ngIf="showPrimary; then primary; else secondary">
+  </ng-container> -->
+  <ng-container #placeholder></ng-container>
+  <!-- <ng-container
+    *ngTemplateOutlet="primary; context: { text: btnText }"
+  ></ng-container> -->
+</div>
+
+<ng-template #primary let-text="text">
+  <div>
+    <button class="btn btn-primary">{{ text }}</button>
+  </div>
+</ng-template>
+
+<ng-template appTest let-text>
+  <div>
+    <button class="btn btn-secondary">{{ text }}</button>
+  </div>
+</ng-template>
