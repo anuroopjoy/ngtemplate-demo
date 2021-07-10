@@ -2,15 +2,15 @@
   {{ title }}
   <!-- <ng-container *ngIf="showPrimary; then primary; else secondary">
   </ng-container> -->
-  <ng-container #placeholder></ng-container>
-  <!-- <ng-container
-    *ngTemplateOutlet="primary; context: { text: btnText }"
-  ></ng-container> -->
+  <!-- <ng-container #placeholder></ng-container> -->
+  <ng-container
+    *ngTemplateOutlet="primary; context: { text: btnText, theme: 'btn-primary' }"
+  ></ng-container>
 </div>
 
-<ng-template #primary let-text="text">
+<ng-template #primary let-text="text" let-theme="theme">
   <div>
-    <button class="btn btn-primary">{{ text }}</button>
+    <button class="btn" [ngClass]="theme">{{ text }}</button>
   </div>
 </ng-template>
 
