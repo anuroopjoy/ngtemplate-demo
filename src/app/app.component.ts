@@ -17,7 +17,6 @@ import { TestDirective } from './test.directive';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'template';
   showPrimary = true;
-  btnText = 'Primary';
 
   @ViewChild('placeholder', { read: ViewContainerRef, static: true })
   public container!: ViewContainerRef;
@@ -35,16 +34,20 @@ export class AppComponent implements OnInit, AfterViewInit {
     //       this.container.insert(primaryView);
     //     } else {
     //       primaryView = this.container.createEmbeddedView(this.primary, {
-    //         text: this.btnText,
+    //         text: 'Primary',
+    //         theme1: 'btn-primary',
     //       });
     //     }
     //   } else {
     //     if (secondaryView) {
     //       this.container.insert(secondaryView);
     //     } else {
-    //       secondaryView = this.container.createEmbeddedView(this.secondary.template, {
-    //         $implicit: 'Secondary',
-    //       });
+    //       secondaryView = this.container.createEmbeddedView(
+    //         this.secondary.template,
+    //         {
+    //           $implicit: 'Secondary',
+    //         }
+    //       );
     //     }
     //   }
     //   this.showPrimary = !this.showPrimary;
@@ -53,10 +56,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   this.showPrimary = !this.showPrimary;
     // }, 2000);
   }
-  ngAfterViewInit(): void {
-    // const view = this.container.createEmbeddedView(this.primary, {
-    //   text: this.btnText,
-    // });
-    // console.log(view);
-  }
+  ngAfterViewInit(): void {}
 }
